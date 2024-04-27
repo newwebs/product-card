@@ -1,0 +1,135 @@
+:root{
+--darkCyan: hsl(158, 36%, 37%);
+--Cream: hsl(30, 38%, 92%);
+--veryDarkBue: hsl(212, 21%, 14%);
+--DarkGrayishBlue: hsl(228, 12%, 48%);
+--White: hsl(0, 0%, 100%);
+--prymaryFont:"Montserrat", sans-serif; 
+--secFont:"Fraunces", serif;;
+}
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+}
+body{
+    font-family: var(--prymaryFont);
+    background: var(--Cream);
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: 700;
+    margin-bottom: 30px;
+    font-family: var(--secFont);
+    font-size: 32px;
+    color: var(--veryDarkBue);
+}
+p{
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-family: var(--prymaryFont);
+    color: var(--DarkGrayishBlue);
+}
+img{
+    width: 100%;
+    height: auto;
+}
+/*DESIGN STARTS*/
+.Card{
+    width: 600px;
+    display: flex; 
+}
+.cardImg{
+    flex-basis: 50%;
+}
+.cardImg img.Desktop{ 
+    border-radius: 10px 0 0 10px;
+    display: block;
+}
+.cardImg img.Mobile{
+    border-radius: 10px 10px 0 0;
+    display: none;
+}
+/*CARD BODYS*/
+.cardBody{
+    flex-basis: 50%;
+    background: var(--White);
+    padding: 30px;
+    border-radius: 0 10px 10px 0;
+}
+.cardBody p:first-child{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+.cardBody h2{
+    line-height: 32px;
+}
+.cardBody p:nth-child(3){
+     line-height: 22px;
+}
+.cardBody h2.Price{
+    color: var(--darkCyan);
+    margin-top: 30px;
+}
+.cardBody h2.Price span{
+    font-family: var(--prymaryFont);
+    color: var(--DarkGrayishBlue);
+    text-decoration: line-through;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 10px;
+    position: relative;
+    top: -5px;
+}
+.cardBody button{
+    background: var(--darkCyan);
+    border: none;
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    color: var(--White);
+    font-weight: bolder;
+}
+.cardBody button img{
+    width: 15px;
+    position: relative;
+    top: 3px;
+    right: 5px;
+}
+/******Phone Design******/
+@media  screen and (max-width:600px) {
+    .Card{
+        width: 340px;
+        flex-direction: column;
+        margin: 25px auto;
+    }
+    .cardImg img.Desktop{ 
+        display: none;
+    }
+   .cardImg img.Mobile{
+        border-radius: 10px 10px 0 0;
+        display: block;
+    }
+    .cardBody{
+       padding: 25px;
+    }
+    .cardBody h2{
+       margin-bottom: 15px;
+    }
+    .cardBody h2.Price{
+        margin-top: 25px;
+    }
+    .cardBody{
+        border-radius: 0 0 10px 10px ;
+    }
+   
+}
